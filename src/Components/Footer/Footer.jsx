@@ -61,10 +61,10 @@ export function Footer() {
                                     Save $3 with App New User Only
                                 </p>
                                 <div className='flex gap-3 items-center justify-center sm:justify-start'>
-                                    <img className='w-1/3' src='/src/assets/5dd6d44594e01b675513068803e2426d.jpeg' alt='qr code'></img>
+                                    <img className='w-1/3' src='/QRcode.jpeg' alt='qr code'></img>
                                     <div className="flex flex-col h-full space-y-2">
-                                        <img src="/src/assets/ert.png" alt="Google Play" className="h-11 rounded-md border" />
-                                        <img src="/src/assets/erf.png" alt="App Store" className="h-11 rounded-md border" />
+                                        <img src="/ert.png" alt="Google Play" className="h-11 rounded-md border" />
+                                        <img src="/erf.png" alt="App Store" className="h-11 rounded-md border" />
                                     </div></div>
                                 {/* Social Icons */}
                                 <div className="flex space-x-9 mt-3 items-center justify-center sm:justify-start">
