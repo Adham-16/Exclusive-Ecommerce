@@ -19,11 +19,11 @@ export function Login() {
                         </div>
                         {/* Password Input */}
                         <div className="mb-10">
-                            <input type="password" id="password" name="password" placeholder='Password' className="w-full  border-nones border-b-[0.1rem] border-b-[#808080] py-2 px-3 ps-0 focus:outline-none focus:border-blue-500" autoComplete="off" />
+                            <input type="password" id="password" name="password" placeholder='Password' className="w-full  border-nones border-b-[0.1rem] border-b-[#808080] py-2 px-3 ps-0 focus:outline-none focus:border-red-500" autoComplete="off" />
                         </div>
                         {/* Forgot Password Link */}
                         <div className="mb-6 flex justify-between items-center">
-                            <button type="submit" className="bg-red-500 hover:bg-blue-600 text-white font-normals rounded-[4px] py-3 px-12">Login</button>
+                            <button type="submit" className="bg-red-500 hover:bg-red-600 text-white font-normals rounded-[4px] py-3 px-12">Login</button>
                             <a href="#" className="hover:underline text-red-500">Forgot Password?</a>
                         </div>
                         {/* Login Button */}
