@@ -10,6 +10,7 @@ function App() {
     <>
       <Header></Header>
       <Signup></Signup>
+      {/* <Login></Login> */}
       <Footer></Footer>
     </>
   )
