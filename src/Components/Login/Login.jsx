@@ -6,7 +6,7 @@ export function Login() {
             <div className="flex justify-center items-center py-5">
                 {/* Left: Image */}
                 <div className="w-1/2 hidden bg-[#CBE4E9] h-full lg:block">
-                    <img src="/public/login.jpeg" alt="Placeholder Image" className="object-cover w-full h-[90vh] pt-5" />
+                    <img src="/login.jpeg" alt="Placeholder Image" className="object-cover w-full h-[90vh] pt-5" />
                 </div>
                 {/* Right: Login Form */}
                 <div className="lg:p-28 md:p-52 sm:20 p-8 w-full lg:w-1/2">
