@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <Header></Header>
-      <Signup></Signup>
-      {/* <Login></Login> */}
+      {/* <Signup></Signup> */}
+      <Login></Login>
       <Footer></Footer>
     </>
   )
