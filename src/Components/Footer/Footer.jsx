@@ -1,6 +1,8 @@
 import React from 'react'
 
 export function Footer() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
     return (
         <>
             <div className="bg-[#000000] dark:bg-gray-800 flex flex-col justify-center items-center ">
@@ -25,35 +27,38 @@ export function Footer() {
                                         </svg></div></div>
                             </div>
                             {/* Support */}
-                            <div>
-                                <h3 className="font-semibold mb-4">Support</h3>
-                                <ul className="text-sm space-y-2">
-                                    <li><p>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p></li>
-                                    <li><p>exclusive@gmail.com</p></li>
-                                    <li><p>+88015-88888-9999</p></li>
-                                </ul>
-                            </div>
+                            {isLoggedIn &&
+                                <div>
+                                    <h3 className="font-semibold mb-4">Support</h3>
+                                    <ul className="text-sm space-y-2">
+                                        <li><p>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p></li>
+                                        <li><p>exclusive@gmail.com</p></li>
+                                        <li><p>+88015-88888-9999</p></li>
+                                    </ul>
+                                </div>}
                             {/* Account */}
-                            <div>
-                                <h3 className="font-semibold mb-4">Account</h3>
-                                <ul className="text-sm space-y-2">
-                                    <li><a href="#" className="hover:text-blue-600">My Account</a></li>
-                                    <li><a href="#" className="hover:text-blue-600">Login / Register</a></li>
-                                    <li><a href="#" className="hover:text-blue-600">Cart</a></li>
-                                    <li><a href="#" className="hover:text-blue-600">Wishlist</a></li>
-                                    <li><a href="#" className="hover:text-blue-600">Shop</a></li>
-                                </ul>
-                            </div>
+                            {isLoggedIn &&
+                                <div>
+                                    <h3 className="font-semibold mb-4">Account</h3>
+                                    <ul className="text-sm space-y-2">
+                                        <li><a href="#" className="hover:text-blue-600">My Account</a></li>
+                                        <li><a href="#" className="hover:text-blue-600">Login / Register</a></li>
+                                        <li><a href="#" className="hover:text-blue-600">Cart</a></li>
+                                        <li><a href="#" className="hover:text-blue-600">Wishlist</a></li>
+                                        <li><a href="#" className="hover:text-blue-600">Shop</a></li>
+                                    </ul>
+                                </div>}
                             {/* Quick Link */}
-                            <div>
-                                <h3 className="font-semibold mb-4">Quick Link</h3>
-                                <ul className="text-sm space-y-2">
-                                    <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
-                                    <li><a href="#" className="hover:text-blue-600">Terms Of Use</a></li>
-                                    <li><a href="#" className="hover:text-blue-600">FAQ</a></li>
-                                    <li><a href="#" className="hover:text-blue-600">Contact</a></li>
-                                </ul>
-                            </div>
+                            {isLoggedIn &&
+                                <div>
+                                    <h3 className="font-semibold mb-4">Quick Link</h3>
+                                    <ul className="text-sm space-y-2">
+                                        <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
+                                        <li><a href="#" className="hover:text-blue-600">Terms Of Use</a></li>
+                                        <li><a href="#" className="hover:text-blue-600">FAQ</a></li>
+                                        <li><a href="#" className="hover:text-blue-600">Contact</a></li>
+                                    </ul>
+                                </div>}
                             {/* Download App */}
                             <div>
                                 <h3 className="font-semibold mb-4">Download App</h3>

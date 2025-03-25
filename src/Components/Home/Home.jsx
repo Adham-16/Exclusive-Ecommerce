@@ -11,12 +11,6 @@ export function Home() {
             window.history.replaceState(null, "", "/home");
         }
     }, [navigate]);
-
-    const handleLogout = () => {
-        localStorage.removeItem("isLoggedIn");
-        navigate("/login", { replace: true });
-
-    };
     return (
         <div>Home</div>
     )
