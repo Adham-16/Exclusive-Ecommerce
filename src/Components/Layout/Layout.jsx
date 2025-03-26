@@ -2,6 +2,7 @@ import React from 'react'
 import { Header } from '../Header/Header'
 import { Footer } from '../Footer/Footer'
 import { Outlet } from 'react-router-dom'
+import Breadcrumb from './../Breadcrumb/Breadcrumb';
 
 
 export function Layout() {
@@ -10,6 +11,7 @@ export function Layout() {
             <div>
                 <Header />
                 <main >
+                    <Breadcrumb></Breadcrumb>
                     <Outlet />
                 </main>
                 <Footer />

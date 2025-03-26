@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 export function NotFound() {
+
+
     return (
         <>
             <div className='text-center py-28 '>

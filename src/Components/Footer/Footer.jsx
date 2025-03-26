@@ -57,7 +57,7 @@ export function Footer() {
                                         <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
                                         <li><a href="#" className="hover:text-blue-600">Terms Of Use</a></li>
                                         <li><Link to={'/about'} className="hover:text-blue-600">FAQ</Link></li>
-                                        <li><a href="#" className="hover:text-blue-600">Contact</a></li>
+                                        <li><Link to={'/contact'} className="hover:text-blue-600">Contact</Link></li>
                                     </ul>
                                 </div>}
                             {/* Download App */}

@@ -1,8 +1,5 @@
 import React from 'react'
 import { Carousel } from './Home Componaents/carousel/carousel'
-import { Account } from '../Account/Account'
-import { NotFound } from '../Not-Found/NotFound'
-import { About } from '../AboutUs/About'
 
 
 export function Home() {
