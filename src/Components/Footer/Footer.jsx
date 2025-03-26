@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export function Footer() {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
@@ -41,8 +42,8 @@ export function Footer() {
                                 <div>
                                     <h3 className="font-semibold mb-4">Account</h3>
                                     <ul className="text-sm space-y-2">
-                                        <li><a href="#" className="hover:text-blue-600">My Account</a></li>
-                                        <li><a href="#" className="hover:text-blue-600">Login / Register</a></li>
+                                        <li><Link to={'/account'} className="hover:text-blue-600">My Account</Link></li>
+                                        <li><Link to={'/login'} className="hover:text-blue-600">Login / Register</Link></li>
                                         <li><a href="#" className="hover:text-blue-600">Cart</a></li>
                                         <li><a href="#" className="hover:text-blue-600">Wishlist</a></li>
                                         <li><a href="#" className="hover:text-blue-600">Shop</a></li>
@@ -55,7 +56,7 @@ export function Footer() {
                                     <ul className="text-sm space-y-2">
                                         <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
                                         <li><a href="#" className="hover:text-blue-600">Terms Of Use</a></li>
-                                        <li><a href="#" className="hover:text-blue-600">FAQ</a></li>
+                                        <li><Link to={'/about'} className="hover:text-blue-600">FAQ</Link></li>
                                         <li><a href="#" className="hover:text-blue-600">Contact</a></li>
                                     </ul>
                                 </div>}

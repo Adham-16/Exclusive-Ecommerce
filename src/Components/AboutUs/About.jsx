@@ -10,7 +10,7 @@ export function About() {
 
     return (
         <>
-            <div className="max-w-7xl mx-auto px-4 py-8">
+            <div className="max-w-7xl mx-auto  lg:px-20 py-8">
                 <SectionOne></SectionOne>
                 <SectionTwo></SectionTwo>
                 <SectionThree></SectionThree>

@@ -1,0 +1,6 @@
+.Slider .slick-dots {
+  bottom: -51px;
+}
+.Slider .slick-dots li button {
+  border: 2px solid #ccc;
+}

@@ -38,21 +38,21 @@ export function SectionTwo() {
     return (
         <>
 
-            <div className='flex justify-center '>
-                <div className="mb-14 w-4/5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {stats.map((stat, index) => (
-                            <div key={index} className="bg-white hover:bg-[#db4444] p-3 border-2 text-center flex flex-col items-center group">
-                                <div className="text-4xl mb-4 bg-black group-hover:text-black group-hover:bg-white rounded-full p-3 border-8 border-[#c1c0c1]  group-hover:border-[#e67c7c]">
-                                    {stat.icon}
-                                </div>
-                                <div className="text-3xl font-bold mb-2 group-hover:text-white">{stat.number}</div>
-                                <p className="text-gray-600 group-hover:text-white">{stat.text}</p>
+
+            <div className="mb-14 ">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {stats.map((stat, index) => (
+                        <div key={index} className="bg-white hover:bg-[#db4444] p-3 border-2 text-center flex flex-col items-center group">
+                            <div className="text-4xl mb-4 bg-black group-hover:text-black group-hover:bg-white rounded-full p-3 border-8 border-[#c1c0c1]  group-hover:border-[#e67c7c]">
+                                {stat.icon}
                             </div>
-                        ))}
-                    </div>
+                            <div className="text-3xl font-bold mb-2 group-hover:text-white">{stat.number}</div>
+                            <p className="text-gray-600 group-hover:text-white">{stat.text}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
+
         </>
     )
 }

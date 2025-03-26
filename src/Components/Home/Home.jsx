@@ -11,9 +11,7 @@ export function Home() {
 
     return (
         <>
-            <About></About>
-            {/* <Account></Account> */}
-            {/* <div className='flex justify-around '>
+            <div className='flex justify-around '>
                 <div className=' flex flex-col justify-start ps-3 pe-7 pt-10 border-e-2 space-y-3 '>
                     <div className='flex items-center justify-between'>
                         <button className="btn w-fit">Women's Fashion</button>
@@ -36,7 +34,7 @@ export function Home() {
                     <button className="btn w-fit">Health and Beauty</button>
                 </div>
                 <Carousel></Carousel>
-            </div> */}
+            </div>
         </>
     )
 }

@@ -184,7 +184,7 @@ export function Header() {
                             <div className='w-full p-3 pt-0'>
                                 <div className={isOpen ? "mobile-menu md:hidden" : "mobile-menu hidden md:hidden"}>
                                     <ul className='space-y-1'>
-                                        <li><Link to="/" className="block px-4 py-3 text-white bg-gray-900 rounded">Home</Link></li>
+                                        <li><Link to="/home" className="block px-4 py-3 text-white bg-gray-900 rounded">Home</Link></li>
                                         <li><Link to="/about" className="block px-4 py-3 text-white bg-gray-900 rounded">About</Link></li>
                                         <li><Link to="/collections" className="block px-4 py-3 text-white bg-gray-900 rounded">Collections</Link></li>
                                         <li><Link to="/contact" className="block px-4 py-3 text-white bg-gray-900 rounded">Contact</Link></li>
