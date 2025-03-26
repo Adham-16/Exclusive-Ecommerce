@@ -8,6 +8,7 @@ import { Signup } from './Components/Signup/Signup'
 import { Home } from './Components/Home/Home'
 import { Layout } from './Components/Layout/Layout'
 import { ProtectedRoute } from './Components/ProtectedRoute/ProtectedRoute'
+import { NotFound } from './Components/Not-Found/NotFound'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>

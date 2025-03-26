@@ -48,10 +48,10 @@ export function Header() {
                             {isLoggedIn &&
                                 <>
                                     <ul className="hidden md:flex px-4 mx-auto font-heading space-x-5 lg:space-x-12">
-                                        <li><NavLink to="/home" className={({ isActive }) => isActive ? 'text-red-500 font-bold hover:text-red-500' : ' hover:text-red-500'} >Home</NavLink></li>
-                                        <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'text-red-500 font-bold hover:text-red-500' : ' hover:text-red-500'}>Contact</NavLink></li>
-                                        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'text-red-500 font-bold hover:text-red-500' : ' hover:text-red-500'}>About</NavLink></li>
-                                        <li><NavLink to="/collections" className={({ isActive }) => isActive ? 'text-red-500 font-bold hover:text-red-500' : ' hover:text-red-500'}>Collections</NavLink></li>
+                                        <li><NavLink to="/home" className={({ isActive }) => isActive ? 'underline underline-offset-4 hover:text-red-500' : ' hover:text-red-500'} >Home</NavLink></li>
+                                        <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'underline underline-offset-4 hover:text-red-500' : ' hover:text-red-500'}>Contact</NavLink></li>
+                                        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'underline underline-offset-4 hover:text-red-500' : ' hover:text-red-500'}>About</NavLink></li>
+                                        <li><NavLink to="/collections" className={({ isActive }) => isActive ? 'underline underline-offset-4 hover:text-red-500' : ' hover:text-red-500'}>Collections</NavLink></li>
                                     </ul>
                                     <form className="max-w-md w-2/5 md:w-1/5 mr-3">
                                         <div className="relative">
