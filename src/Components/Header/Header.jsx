@@ -39,9 +39,9 @@ export function Header() {
                 <Link to="/products" className="underline text-white ml-2">ShopNow</Link>
             </div>
             <div>
-                <section className="relative border-b-[0.1rem] border-b-[#d7d6d6]">
+                <section className="relative px-20 border-b-[0.1rem] border-b-[#d7d6d6]">
                     <nav className="flex justify-between flex-wrap text-black" ref={navRef}>
-                        <div className="px-5 py-4 flex w-full justify-between items-center">
+                        <div className=" py-4 flex w-full justify-between items-center">
                             <Link to="/home" className="text-3xl font-bold font-heading">
                                 <h1 className="hover:text-red-500 text-[15px] sm:text-[23px] md:text-[30px]">Exclusive</h1>
                             </Link>

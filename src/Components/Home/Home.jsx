@@ -1,5 +1,13 @@
 import React from 'react'
 import { Carousel } from './Home Componaents/carousel/carousel'
+import { TopRightSection } from './Home Componaents/topRightSection/topRightSection'
+import FlashSales from './Home Componaents/Flash Sales/FlashSales'
+import CategoriesSection from './Home Componaents/Categories/CategoriesSection'
+import BestSellingProducts from './Home Componaents/Best Selling Products/BestSellingProducts'
+import UrgentOffers from './Home Componaents/Urgent Offers/UrgentOffers';
+import OurProducts from './Home Componaents/OurProducts/OurProducts'
+import { SectionFour } from '../AboutUs/SectionFour'
+import NewArrival from './Home Componaents/NewArrival/NewArrival'
 
 
 export function Home() {
@@ -8,29 +16,48 @@ export function Home() {
 
     return (
         <>
-            <div className='flex justify-around '>
-                <div className=' flex flex-col justify-start ps-3 pe-7 pt-10 border-e-2 space-y-3 '>
-                    <div className='flex items-center justify-between'>
-                        <button className="btn w-fit">Women's Fashion</button>
-                        <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.95 6.63597L0 1.68597L1.414 0.271973L7.778 6.63597L1.414 13L0 11.586L4.95 6.63597Z" fill="black" />
-                        </svg>
+            <div >
+                <section>
+                    <div className='flex justify-around x flex-col md:flex-row'>
+                        <TopRightSection className='order-2 md:order-1'></TopRightSection>
+                        <Carousel className='order-1 md:order-2'></Carousel>
                     </div>
-                    <div className='flex items-center justify-between'>
-                        <button className="btn w-fit">Men's Fashion</button>
-                        <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.95 6.63597L0 1.68597L1.414 0.271973L7.778 6.63597L1.414 13L0 11.586L4.95 6.63597Z" fill="black" />
-                        </svg>
+                </section>
+                <section >
+                    <div >
+                        <FlashSales></FlashSales>
                     </div>
-                    <button className="btn w-fit">Electronics</button>
-                    <button className="btn w-fit">Home and Lifestyle</button>
-                    <button className="btn w-fit">Medicine</button>
-                    <button className="btn w-fit">Sports and Outdoor</button>
-                    <button className="btn w-fit">Boys and Toys</button>
-                    <button className="btn w-fit">Durex and Bits</button>
-                    <button className="btn w-fit">Health and Beauty</button>
-                </div>
-                <Carousel></Carousel>
+                </section>
+                <section >
+                    <div >
+                        <CategoriesSection></CategoriesSection>
+                    </div>
+                </section>
+                <section >
+                    <div >
+                        <BestSellingProducts></BestSellingProducts>
+                    </div>
+                </section>
+                <section >
+                    <div >
+                        <UrgentOffers></UrgentOffers>
+                    </div>
+                </section>
+                <section >
+                    <div >
+                        <OurProducts></OurProducts>
+                    </div>
+                </section>
+                <section >
+                    <div >
+                        <NewArrival></NewArrival>
+                    </div>
+                </section>
+                <section >
+                    <div >
+                        <SectionFour></SectionFour>
+                    </div>
+                </section>
             </div>
         </>
     )

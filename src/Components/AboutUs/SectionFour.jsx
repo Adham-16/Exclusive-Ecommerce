@@ -54,10 +54,10 @@ export function SectionFour() {
     return (
         <>
 
-            <div className='mb-8'>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className='mb-8 w-full flex justify-center'>
+                <div className="grid content-center w-10/12 grid-cols-1 md:grid-cols-3 gap-1">
                     {services.map((service, index) => (
-                        <div key={index} className=" p-6 text-center flex flex-col items-center">
+                        <div key={index} className=" p-4 px-2 w-fit text-center flex flex-col items-center">
                             <div className="text-4xl mb-4 w-fit bg-black group-hover:text-black group-hover:bg-white rounded-full p-3 border-8 border-[#c1c0c1]  group-hover:border-[#e67c7c]">{service.icon}</div>
                             <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                             <p className="text-black text-sm">{service.description}</p>

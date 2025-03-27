@@ -80,7 +80,7 @@ export function Carousel() {
     ];
     return (
         <>
-            <div className="w-3/5 relative bg-black mt-10">
+            <div className="lg:w-3/5 w-full relative bg-black mt-10">
                 <Slider {...settings}>
                     {slides.map((slide) => (
                         <div key={slide.id} className="relative flex justify-between">
@@ -93,8 +93,8 @@ export function Carousel() {
                                 />
                             </div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start p-8 text-white bg-black bg-opacity-30">
-                                <h2 className="text-3xl font-bold mb-2">{slide.title}</h2>
-                                <p className="text-4xl mb-4 w-1/2">{slide.description}</p>
+                                <h2 className="md:text-3xl text-xl font-bold mb-2">{slide.title}</h2>
+                                <p className="md:text-4xl text-xl mb-4 w-1/2">{slide.description}</p>
 
                                 <div className='flex items-center'>
                                     <Link
