@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function UrgentOffers() {
     const [timeLeft, setTimeLeft] = useState({
@@ -71,9 +72,9 @@ export default function UrgentOffers() {
                                 </div>
                             </div>
                         </div>
-                        <button className="bg-[#00ff66] text-white px-10 py-3 rounded-sm w-fit hover:bg-[#00cc55] transition-colors">
+                        <Link to={'/products'} className="bg-[#00ff66] text-white px-10 py-3 rounded-sm w-fit hover:bg-[#00cc55] transition-colors">
                             Buy Now!
-                        </button>
+                        </Link>
                     </div>
                 </div>
 

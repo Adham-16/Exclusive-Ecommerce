@@ -8,6 +8,8 @@ import UrgentOffers from './Home Componaents/Urgent Offers/UrgentOffers';
 import OurProducts from './Home Componaents/OurProducts/OurProducts'
 import { SectionFour } from '../AboutUs/SectionFour'
 import NewArrival from './Home Componaents/NewArrival/NewArrival'
+import { Toaster } from 'react-hot-toast'
+
 
 
 export function Home() {
@@ -16,6 +18,7 @@ export function Home() {
 
     return (
         <>
+
             <div >
                 <section>
                     <div className='flex justify-around x flex-col md:flex-row'>
@@ -59,6 +62,7 @@ export function Home() {
                     </div>
                 </section>
             </div>
+            <Toaster></Toaster>
         </>
     )
 }

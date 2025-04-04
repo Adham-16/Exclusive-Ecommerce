@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
+import { addToWishlist } from '../Wishlist/addToWishlist';
+import { Toaster } from 'react-hot-toast';
+import { HeartIcon } from '@heroicons/react/24/outline';
+import { addToCart } from '../Cart/AddtoCart';
+import { Link } from 'react-router-dom';
 
 export default function ProductsPage() {
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-    const productsPerPage = 20; // 5 صفوف × 4 أعمدة
+    const productsPerPage = 20;
 
-    // جلب المنتجات
+
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -23,33 +28,32 @@ export default function ProductsPage() {
         fetchProducts();
     }, []);
 
-    // حساب المنتجات للصفحة الحالية
+
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
-    // تغيير الصفحة
+
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    // عرض تفاصيل المنتج
-    const showProductDetails = (productId) => {
-        alert(`View product details No ${productId}`);
-    };
 
     return (
         <div className="container mx-auto px-20 py-8">
             <h1 className="text-3xl font-bold mb-8">All Products</h1>
 
-            {/* عرض المنتجات */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {currentProducts.map((product) => (
                     <div key={product.id} className="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                        <div className="h-48 bg-gray-100 flex items-center justify-center p-4">
+                        <div className="h-48 bg-gray-100 flex items-center justify-center p-4 relative">
                             <img
                                 src={product.thumbnail}
                                 alt={product.title}
                                 className="max-h-full max-w-full object-contain"
                             />
+                            <button onClick={() => addToWishlist(product.id)} className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <HeartIcon className="h-5 w-5 text-gray-600 hover:text-[#DB4444]" />
+                            </button>
+
                         </div>
                         <div className="p-4">
                             <h3 className="font-semibold text-lg mb-2 line-clamp-1">{product.title}</h3>
@@ -74,18 +78,23 @@ export default function ProductsPage() {
                                 ))}
                                 <span className="text-sm text-gray-500 ml-1">({product.rating})</span>
                             </div>
-                            <button
-                                onClick={() => showProductDetails(product.id)}
-                                className="block mt-4 w-full bg-[#DB4444] text-white py-2 rounded hover:bg-[#b33c3c] transition-colors"
+                            <Link
+                                to={`/products/${product.id}`}
+                                className="block text-center mt-4 w-full bg-[#DB4444] text-white py-2 rounded hover:bg-[#b33c3c] transition-colors"
                             >
                                 View Details
+                            </Link>
+                            <button
+                                onClick={() => addToCart(product.id, 1)}
+                                className="block mt-4 w-full bg-[#DB4444] text-white py-2 rounded hover:bg-[#b33c3c] transition-colors"
+                            >
+                                Add To Cart
                             </button>
                         </div>
                     </div>
                 ))}
             </div>
 
-            {/* الترقيم الصفحي */}
             {totalPages > 1 && (
                 <div className="flex justify-center mt-8">
                     <nav className="flex items-center gap-1">
@@ -130,6 +139,7 @@ export default function ProductsPage() {
                     </nav>
                 </div>
             )}
+            <Toaster></Toaster>
         </div>
     );
 }

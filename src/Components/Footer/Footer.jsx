@@ -44,9 +44,9 @@ export function Footer() {
                                     <ul className="text-sm space-y-2">
                                         <li><Link to={'/account'} className="hover:text-blue-600">My Account</Link></li>
                                         <li><Link to={'/login'} className="hover:text-blue-600">Login / Register</Link></li>
-                                        <li><a href="#" className="hover:text-blue-600">Cart</a></li>
-                                        <li><a href="#" className="hover:text-blue-600">Wishlist</a></li>
-                                        <li><a href="#" className="hover:text-blue-600">Shop</a></li>
+                                        <li><Link to={'/cart'} className="hover:text-blue-600">Cart</Link></li>
+                                        <li><Link to={'/wishlist'} className="hover:text-blue-600">Wishlist</Link></li>
+                                        <li><Link to={'/products'} className="hover:text-blue-600">Shop</Link></li>
                                     </ul>
                                 </div>}
                             {/* Quick Link */}

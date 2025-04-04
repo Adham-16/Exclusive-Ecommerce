@@ -98,7 +98,7 @@ export function Carousel() {
 
                                 <div className='flex items-center'>
                                     <Link
-                                        href={slide.buttonLink}
+                                        to={'/products'}
                                         className="bg-black hover:text-[#DB4444] underline underline-offset-8 text-white  pe-3 py-2 rounded-md transition duration-300"
                                     >
                                         {slide.buttonText}

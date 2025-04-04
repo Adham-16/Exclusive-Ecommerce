@@ -12,6 +12,11 @@ import { Account } from './Components/Account/Account'
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ContactUs from './Components/ContactUs/ContactUs'
+import ProductsPage from './Components/ProductsPage/ProductsPage'
+import WishlistPage from './Components/Wishlist/Wishlist'
+import CartPage from './Components/Cart/Cart'
+import CheckoutPage from './Components/Checkout/Checkout';
+import ProductDetails from './Components/ProductDetails/ProductDetails'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +42,11 @@ function App() {
           <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
           <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
           <Route path="/contact" element={<ProtectedRoute><ContactUs /></ProtectedRoute>} />
+          <Route path="/products" element={<ProtectedRoute><ProductsPage /></ProtectedRoute>} />
+          <Route path="/wishlist" element={<ProtectedRoute><WishlistPage /></ProtectedRoute>} />
+          <Route path="/Cart" element={<ProtectedRoute><CartPage /></ProtectedRoute>} />
+          <Route path="/checkout" element={<ProtectedRoute><CheckoutPage /></ProtectedRoute>} />
+          <Route path="/products/:id" element={<ProtectedRoute><ProductDetails /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

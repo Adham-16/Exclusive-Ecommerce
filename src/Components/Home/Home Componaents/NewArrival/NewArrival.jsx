@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function NewArrival() {
     return (
         <section className="py-12 px-6 md:px-20">
@@ -20,9 +22,9 @@ export default function NewArrival() {
                     <div className="absolute bottom-8 left-8 text-white">
                         <h3 className="text-xl md:text-2xl font-medium mb-2">PlayStation 5</h3>
                         <p className="text-sm mb-6 w-2/3">Black and White version of the PS5 coming out on sale.</p>
-                        <button className="bg-transparent text-white p-0 hover:text-[#DB4444] transition-colors">
+                        <Link to={'/products'} className="bg-transparent text-white p-0 hover:text-[#DB4444] transition-colors">
                             <span className="border-b-2 border-white hover:border-[#DB4444] pb-1">Shop Now</span>
-                        </button>
+                        </Link>
                     </div>
                 </div>
 
@@ -38,9 +40,9 @@ export default function NewArrival() {
                         <div className="absolute bottom-8 left-8 text-white">
                             <h3 className="text-xl md:text-2xl font-medium mb-2">Women’s Collections</h3>
                             <p className="text-sm mb-4 w-2/3">Featured woman collections that give you another vibe</p>
-                            <button className="bg-transparent text-white p-0 hover:text-[#DB4444] transition-colors">
+                            <Link to={'/products'} className="bg-transparent text-white p-0 hover:text-[#DB4444] transition-colors">
                                 <span className="border-b-2 border-white hover:border-[#DB4444] pb-1">Shop Now</span>
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -57,9 +59,9 @@ export default function NewArrival() {
                             <div className="absolute bottom-8 left-8 text-white">
                                 <h3 className="text-xl md:text-2xl font-medium mb-2">Speakers</h3>
                                 <p className="text-sm mb-6">Amazon wireless speakers</p>
-                                <button className="bg-transparent text-white p-0 hover:text-[#DB4444] transition-colors">
+                                <Link to={'/products'} className="bg-transparent text-white p-0 hover:text-[#DB4444] transition-colors">
                                     <span className="border-b-2 border-white hover:border-[#DB4444] pb-1">Shop Now</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
 
@@ -75,9 +77,9 @@ export default function NewArrival() {
                             <div className="absolute bottom-8 left-8 text-white">
                                 <h3 className="text-xl md:text-2xl font-medium mb-2">Perfume</h3>
                                 <p className="text-sm mb-6">Premium quality perfumes</p>
-                                <button className="bg-transparent text-white p-0 hover:text-[#DB4444] transition-colors">
+                                <Link to={'/products'} className="bg-transparent text-white p-0 hover:text-[#DB4444] transition-colors">
                                     <span className="border-b-2 border-white hover:border-[#DB4444] pb-1">Shop Now</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -4,6 +4,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SelectedProductView from '../selectedProductView/selectedProductView';
+import { addToWishlist } from './../../../Wishlist/addToWishlist';
+import { Link } from 'react-router-dom';
+import { addToCart } from './../../../Cart/AddtoCart';
 
 export default function OurProducts() {
     const [products, setProducts] = useState([]);
@@ -106,12 +109,12 @@ export default function OurProducts() {
                                                 className="max-h-full max-w-full object-contain"
                                             />
                                             <button className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
-                                                <HeartIcon className="h-5 w-5 text-gray-600 hover:text-[#DB4444]" />
+                                                <HeartIcon onClick={() => addToWishlist(product.id)} className="h-5 w-5 text-gray-600 hover:text-[#DB4444]" />
                                             </button>
                                             <button onClick={() => setSelectedProduct(product)} className="absolute top-14 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                                 <EyeIcon className="h-5 w-5 text-gray-600 hover:text-[#DB4444]" />
                                             </button>
-                                            <button className="absolute bottom-0 left-0 right-0 bg-[#000] text-white p-2 text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <button onClick={() => addToCart(product.id, 1)} className="absolute bottom-0 left-0 right-0 bg-[#000] text-white p-2 text-center opacity-0 group-hover:opacity-100 transition-opacity">
                                                 Add To Cart
                                             </button>
                                         </div>
@@ -149,9 +152,9 @@ export default function OurProducts() {
 
             {/* View All button */}
             <div className="text-center mt-10">
-                <button className="px-8 py-3 bg-[#DB4444] text-white rounded hover:bg-[#b33c3c]">
+                <Link to={'/products'} className="px-8 py-3 bg-[#DB4444] text-white rounded hover:bg-[#b33c3c]">
                     View All Products
-                </button>
+                </Link>
             </div>
 
             {/* Product Modal */}

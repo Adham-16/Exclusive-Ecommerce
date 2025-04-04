@@ -3,21 +3,18 @@ import { ChevronLeftIcon, ChevronRightIcon, HeartIcon, EyeIcon } from '@heroicon
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import SelectedProductView from '../selectedProductView/selectedProductView';
-import { addToWishlist } from '../../../Wishlist/addToWishlist';
 import { Link } from 'react-router-dom';
-import { addToCart } from '../../../Cart/AddtoCart';
 
-export default function BestSellingProducts() {
+export default function JustForYou() {
     const [products, setProducts] = useState([]);
-    const [selectedProduct, setSelectedProduct] = useState(null);
+
 
 
     // Fetch best selling products from API
     useEffect(() => {
         const fetchBestSellingProducts = async () => {
             try {
-                const response = await fetch('https://dummyjson.com/products/category/laptops');
+                const response = await fetch('https://dummyjson.com/products/category/fragrances');
                 const data = await response.json();
                 setProducts(data.products.slice(0, 8)); // عرض أول 8 منتجات فقط
             } catch (error) {
@@ -59,20 +56,20 @@ export default function BestSellingProducts() {
     };
 
     return (
-        <section className="py-12 px-6 md:px-20 relative">
+        <section className="py-12   relative">
             {/* Header */}
             <div className="flex flex-col  justify-between items-start space-y-5 mb-14">
-                <div className="flex items-center mb-4 md:mb-0">
-                    <div className="w-5 h-10 bg-[#DB4444] rounded mr-3"></div>
-                    <p className="text-[#DB4444] font-semibold">This Month</p>
-                </div>
-
-                <div className="flex items-center justify-between w-full mb-6 md:mb-0">
-                    <h2 className="text-2xl md:text-3xl font-bold">Best Selling Products</h2>
-                    <Link to={'/products'} className="px-10 py-3 bg-[#DB4444] text-white rounded hover:bg-[#b33c3c]">
-                        View All
+                <div className="flex justify-between items-center w-full mb-4 md:mb-0">
+                    <div className='flex space-x-2 items-center'>
+                        <div className="w-5 h-10 bg-[#DB4444] rounded mr-3"></div>
+                        <p className=" font-normal text-2xl">Just For You</p>
+                    </div>
+                    <Link to={'/products'} className="px-10 py-3 bg-[#fff] border border-[#000] rounded hover:bg-[#DB4444] hover:text-white hover:border-[#DB4444]">
+                        See All
                     </Link>
                 </div>
+
+
             </div>
 
             {/* Products carousel */}
@@ -87,13 +84,10 @@ export default function BestSellingProducts() {
                                         alt={product.title}
                                         className="max-h-full max-w-full object-contain"
                                     />
-                                    <button onClick={() => addToWishlist(product.id)} className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <HeartIcon className="h-5 w-5 text-gray-600 hover:text-[#DB4444]" />
-                                    </button>
-                                    <button onClick={() => setSelectedProduct(product)} className="absolute top-14 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <button className="absolute top-2 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                         <EyeIcon className="h-5 w-5 text-gray-600 hover:text-[#DB4444]" />
                                     </button>
-                                    <button onClick={() => addToCart(product.id, 1)} className="absolute bottom-0 left-0 right-0 bg-[#000] text-white p-2 text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <button className="absolute bottom-0 left-0 right-0 bg-[#000] text-white p-2 text-center opacity-0 group-hover:opacity-100 transition-opacity">
                                         Add To Cart
                                     </button>
                                 </div>
@@ -127,10 +121,7 @@ export default function BestSellingProducts() {
                 </Slider>
             </div>
 
-            {/* Product Modal */}
-            {selectedProduct && (
-                <SelectedProductView selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}></SelectedProductView>
-            )}
+
         </section>
     );
 }
