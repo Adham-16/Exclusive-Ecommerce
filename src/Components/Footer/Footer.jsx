@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 export function Footer() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
+        setIsLoading(false);
+    }, []);
+
+    if (isLoading) {
+        return <div className="flex justify-center items-center h-64">
+            <span class="loader"></span>
+        </div>
+    };
 
     return (
         <>
