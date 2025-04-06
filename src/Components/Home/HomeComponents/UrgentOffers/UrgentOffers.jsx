@@ -82,7 +82,7 @@ export default function UrgentOffers() {
                 <div className="md:w-1/2 flex justify-center">
                     <div className="relative w-full max-w-md">
                         <img
-                            src="/public/sound.png"
+                            src="/sound.png"
                             alt="Music Experience"
                             width={500}
                             height={500}

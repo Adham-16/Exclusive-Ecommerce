@@ -51,7 +51,7 @@ export default function NewArrival() {
                         {/* Speakers */}
                         <div className="md:w-1/2 relative bg-[#000000e3]  h-[300px] overflow-hidden">
                             <img
-                                src="/public/Speakers.png"
+                                src="/Speakers.png"
                                 alt="Speakers"
                                 className="w-full h-full object-contain scale-[1.5] ms-8 opacity-90"
                                 style={{ filter: 'drop-shadow(rgba(255, 255, 255, 0.2) 10px -10px 60px)' }}
@@ -68,7 +68,7 @@ export default function NewArrival() {
                         {/* Perfume */}
                         <div className="md:w-1/2 relative bg-[#000000e3]  h-[300px] overflow-hidden">
                             <img
-                                src="/public/Perfume.png"
+                                src="/Perfume.png"
                                 alt="Perfume"
                                 className="w-full h-full object-contain scale-[0.86] opacity-90"
                                 style={{ filter: 'drop-shadow(rgba(255, 255, 255, 0.4) 10px -10px 60px)' }}
