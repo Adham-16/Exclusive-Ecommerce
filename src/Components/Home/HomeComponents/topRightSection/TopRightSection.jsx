@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export function TopRightSection() {
     const [expandedCategory, setExpandedCategory] = useState(null);
 
-    const categories = [
+    const categoriesWithSub = [
         {
             id: 1,
             name: "Women's Fashion",
@@ -24,33 +24,16 @@ export function TopRightSection() {
                 { slug: "mens-shoes", name: "Shoes" },
                 { slug: "mens-watches", name: "Watches" }
             ]
-        },
-        {
-            id: 3,
-            name: "Electronics",
-            subcategories: [
-                { slug: "smartphones", name: "Smartphones" },
-                { slug: "laptops", name: "Laptops" },
-                { slug: "tablets", name: "Tablets" }
-            ]
-        },
-        {
-            id: 4,
-            name: "Home and Lifestyle",
-            subcategories: [
-                { slug: "home-decoration", name: "Decoration" },
-                { slug: "furniture", name: "Furniture" },
-                { slug: "lighting", name: "Lighting" }
-            ]
-        },
-        {
-            id: 5,
-            name: "Medicine",
-            subcategories: [
-                { slug: "skin-care", name: "Skin Care" },
-                { slug: "fragrances", name: "Fragrances" }
-            ]
         }
+    ];
+
+    const regularCategories = [
+        { id: 3, name: "Electronics", slug: "laptops" },
+        { id: 4, name: "Home & Lifestyle", slug: "home-decoration" },
+        { id: 5, name: "Medicine", slug: "skin-care" },
+        { id: 6, name: "Sports & Outdoor", slug: "sports-accessories" },
+        { id: 7, name: "Boys & Toys", slug: "furniture" },
+        { id: 8, name: "Health & Beauty", slug: "beauty" }
     ];
 
     const toggleCategory = (id) => {
@@ -59,13 +42,13 @@ export function TopRightSection() {
 
     return (
         <div className='flex flex-col justify-start ps-3 pe-7 pt-10 border-e-2 space-y-3'>
-            {categories.map(category => (
+            {categoriesWithSub.map(category => (
                 <div key={category.id} className="space-y-1">
                     <div
                         className="flex items-center justify-between cursor-pointer hover:bg-gray-50 p-1 rounded"
                         onClick={() => toggleCategory(category.id)}
                     >
-                        <span className="font-medium">{category.name}</span>
+                        <span className="font-normal mr-8">{category.name}</span>
                         <svg
                             width="8"
                             height="13"
@@ -90,6 +73,18 @@ export function TopRightSection() {
                             ))}
                         </div>
                     )}
+                </div>
+            ))}
+
+            {regularCategories.map(category => (
+                <div key={category.id} className='flex items-center justify-between hover:bg-gray-50 p-1 rounded'>
+                    <Link
+                        to={`/products/category/${category.slug}`}
+                        className="btn w-fit hover:text-[#db4444]"
+                    >
+                        {category.name}
+                    </Link>
+
                 </div>
             ))}
         </div>
