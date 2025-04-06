@@ -27,38 +27,38 @@ export function Footer() {
                                             <path d="M8.91196 9.9998H2.99996L1.02296 2.1348C1.0103 2.0891 1.00259 2.04216 0.999959 1.9948C0.977959 1.2738 1.77196 0.773804 2.45996 1.1038L21 9.9998L2.45996 18.8958C1.77996 19.2228 0.995959 18.7368 0.999959 18.0288C1.00198 17.9655 1.0131 17.9029 1.03296 17.8428L2.49996 12.9998" stroke="#FAFAFA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg></div></div>
                             </div>
-                            {/* Support */}
                             {isLoggedIn &&
                                 <div>
-                                    <h3 className="font-semibold mb-4">Support</h3>
-                                    <ul className="text-sm space-y-2">
-                                        <li><p>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p></li>
-                                        <li><p>exclusive@gmail.com</p></li>
-                                        <li><p>+88015-88888-9999</p></li>
-                                    </ul>
-                                </div>}
-                            {/* Account */}
-                            {isLoggedIn &&
-                                <div>
-                                    <h3 className="font-semibold mb-4">Account</h3>
-                                    <ul className="text-sm space-y-2">
-                                        <li><Link to={'/account'} className="hover:text-blue-600">My Account</Link></li>
-                                        <li><Link to={'/login'} className="hover:text-blue-600">Login / Register</Link></li>
-                                        <li><Link to={'/cart'} className="hover:text-blue-600">Cart</Link></li>
-                                        <li><Link to={'/wishlist'} className="hover:text-blue-600">Wishlist</Link></li>
-                                        <li><Link to={'/products'} className="hover:text-blue-600">Shop</Link></li>
-                                    </ul>
-                                </div>}
-                            {/* Quick Link */}
-                            {isLoggedIn &&
-                                <div>
-                                    <h3 className="font-semibold mb-4">Quick Link</h3>
-                                    <ul className="text-sm space-y-2">
-                                        <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
-                                        <li><a href="#" className="hover:text-blue-600">Terms Of Use</a></li>
-                                        <li><Link to={'/about'} className="hover:text-blue-600">FAQ</Link></li>
-                                        <li><Link to={'/contact'} className="hover:text-blue-600">Contact</Link></li>
-                                    </ul>
+                                    {/* Support */}
+                                    <div>
+                                        <h3 className="font-semibold mb-4">Support</h3>
+                                        <ul className="text-sm space-y-2">
+                                            <li><p>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p></li>
+                                            <li><p>exclusive@gmail.com</p></li>
+                                            <li><p>+88015-88888-9999</p></li>
+                                        </ul>
+                                    </div>
+                                    {/* Account */}
+                                    <div>
+                                        <h3 className="font-semibold mb-4">Account</h3>
+                                        <ul className="text-sm space-y-2">
+                                            <li><Link to={'/account'} className="hover:text-blue-600">My Account</Link></li>
+                                            <li><Link to={'/login'} className="hover:text-blue-600">Login / Register</Link></li>
+                                            <li><Link to={'/cart'} className="hover:text-blue-600">Cart</Link></li>
+                                            <li><Link to={'/wishlist'} className="hover:text-blue-600">Wishlist</Link></li>
+                                            <li><Link to={'/products'} className="hover:text-blue-600">Shop</Link></li>
+                                        </ul>
+                                    </div>
+                                    {/* Quick Link */}
+                                    <div>
+                                        <h3 className="font-semibold mb-4">Quick Link</h3>
+                                        <ul className="text-sm space-y-2">
+                                            <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
+                                            <li><a href="#" className="hover:text-blue-600">Terms Of Use</a></li>
+                                            <li><Link to={'/about'} className="hover:text-blue-600">FAQ</Link></li>
+                                            <li><Link to={'/contact'} className="hover:text-blue-600">Contact</Link></li>
+                                        </ul>
+                                    </div>
                                 </div>}
                             {/* Download App */}
                             <div>
