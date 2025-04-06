@@ -38,40 +38,40 @@ export function Carousel() {
 
     const slides = [
         {
-            id: 1,
-            image: "/public/carousel1.jpeg",
+            id: 'New offer from iPhone',
+            image: "/carousel1.jpeg",
             title: "Exclusive Offers",
             description: "Up to 10% off Voucher",
             buttonText: "Shop Now",
             buttonLink: "/products"
         },
         {
-            id: 2,
-            image: "/public/carousel2.jpeg",
+            id: 'New collection of sportswear',
+            image: "/carousel2.jpeg",
             title: "New Collection",
             description: "Discover the latest fashion trends of the season",
             buttonText: "Shop Now",
             buttonLink: "/new-arrivals"
         },
         {
-            id: 3,
-            image: "/public/carousel3.jpeg",
+            id: 'New developments in PlayStation 5',
+            image: "/carousel3.jpeg",
             title: "Summer Sale",
             description: "Explore the hottest styles for this summer",
             buttonText: "Shop Now",
             buttonLink: "/products"
         },
         {
-            id: 4,
-            image: "/public/carousel4.jpeg",
+            id: 'The new version of the latest audio devices',
+            image: "/carousel4.jpeg",
             title: "Eid Discounts",
             description: "Celebrate Eid with exclusive festive discounts",
             buttonText: "Shop Now",
             buttonLink: "/new-arrivals"
         },
         {
-            id: 5,
-            image: "/public/carousel5.jpeg",
+            id: 'The latest Western fashion releases',
+            image: "/carousel5.jpeg",
             title: "New Collection",
             description: "Stay trendy with our latest fashion arrivals",
             buttonText: "Shop Now",

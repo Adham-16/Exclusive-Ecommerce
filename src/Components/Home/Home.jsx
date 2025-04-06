@@ -1,10 +1,10 @@
 import React from 'react'
 import { Carousel } from './HomeComponents/carousel/Carousel'
 import { TopRightSection } from './HomeComponents/topRightSection/TopRightSection'
-import FlashSales from './HomeComponents/Flash Sales/FlashSales'
+import FlashSales from './HomeComponents/FlashSales/FlashSales'
 import CategoriesSection from './HomeComponents/Categories/CategoriesSection'
-import BestSellingProducts from './HomeComponents/Best Selling Products/BestSellingProducts'
-import UrgentOffers from './HomeComponents/Urgent Offers/UrgentOffers';
+import BestSellingProducts from './HomeComponents/BestSellingProducts/BestSellingProducts'
+import UrgentOffers from './HomeComponents/UrgentOffers/UrgentOffers';
 import OurProducts from './HomeComponents/OurProducts/OurProducts'
 import { SectionFour } from '../AboutUs/SectionFour'
 import NewArrival from './HomeComponents/NewArrival/NewArrival'
