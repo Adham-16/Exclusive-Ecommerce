@@ -31,6 +31,7 @@ export function Login() {
         setSuccessfulMessage("Login successful!");
         setTimeout(() => {
             localStorage.setItem("isLoggedIn", "true");
+            window.dispatchEvent(new Event('storage'))
             navigate("/Home", { replace: true });
         }, 1000);
     };
