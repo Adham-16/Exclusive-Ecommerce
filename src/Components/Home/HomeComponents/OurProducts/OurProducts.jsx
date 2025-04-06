@@ -111,9 +111,9 @@ export default function OurProducts() {
                                             <button className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                                 <HeartIcon onClick={() => addToWishlist(product.id)} className="h-5 w-5 text-gray-600 hover:text-[#DB4444]" />
                                             </button>
-                                            <button onClick={() => setSelectedProduct(product)} className="absolute top-14 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <Link to={`/products/${product.id}`} className="absolute top-14 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                                 <EyeIcon className="h-5 w-5 text-gray-600 hover:text-[#DB4444]" />
-                                            </button>
+                                            </Link>
                                             <button onClick={() => addToCart(product.id, 1)} className="absolute bottom-0 left-0 right-0 bg-[#000] text-white p-2 text-center opacity-0 group-hover:opacity-100 transition-opacity">
                                                 Add To Cart
                                             </button>

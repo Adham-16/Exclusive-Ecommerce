@@ -18,7 +18,7 @@ export function LeftSection() {
                     </div>
                     <div className="border-b pb-4">
                         <h3 className="text-xl font-medium mb-3">
-                            <Link to={''}> My Orders</Link>
+                            <Link to={'/Cart'}> My Orders</Link>
                         </h3>
                         <ul className="space-y-2 pl-4">
                             <li className="text-gray-700"> <NavLink to={'/vbn'} className={({ isActive }) => isActive ? 'font-medium text-red-500' : ' hover:text-red-500'}> My Returns  </NavLink></li>
@@ -27,7 +27,7 @@ export function LeftSection() {
                     </div>
                     <div>
                         <h3 className="text-xl font-medium">
-                            <Link to={''}> My WishList</Link>
+                            <Link to={'/wishlist'}> My WishList</Link>
                         </h3>
                     </div>
                 </div>

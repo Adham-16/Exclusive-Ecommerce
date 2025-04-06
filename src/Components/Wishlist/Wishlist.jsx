@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { HeartIcon, EyeIcon } from '@heroicons/react/24/outline';
+import { EyeIcon, TrashIcon } from '@heroicons/react/24/outline';
 import JustForYou from './JustForYou';
+import toast, { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const WishlistPage = () => {
     const [wishlistItems, setWishlistItems] = useState([]);
@@ -50,7 +52,35 @@ const WishlistPage = () => {
 
     const moveAllToBag = () => {
 
-        // alert('تم نقل جميع العناصر إلى سلة التسوق');
+        const currentCart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+        const updatedCart = [...currentCart];
+
+
+        products.forEach(product => {
+
+            const existingItem = updatedCart.find(item => item.id === product.id);
+
+            if (existingItem) {
+
+                existingItem.quantity = (existingItem.quantity || 1) + 1;
+            } else {
+                updatedCart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+        });
+
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+        localStorage.removeItem('wishlist');
+        setWishlistItems([]);
+        setProducts([]);
+
+        toast.success('Added to the Cart Successfully!', {
+            duration: 2000
+        });
     };
 
     const removeFromWishlist = (productId) => {
@@ -104,11 +134,11 @@ const WishlistPage = () => {
                                         onClick={() => removeFromWishlist(product.id)}
                                         className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-red-50 transition-colors"
                                     >
-                                        <HeartIcon className="h-5 w-5 text-[#DB4444]" />
+                                        <TrashIcon className="h-5 w-5 text-[#DB4444]" />
                                     </button>
-                                    <button className="absolute top-14 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <Link to={`/products/${product.id}`} className="absolute top-14 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                         <EyeIcon className="h-5 w-5 text-gray-600 hover:text-[#DB4444]" />
-                                    </button>
+                                    </Link>
                                     <button
                                         onClick={() => addToCart(product.id, 1)}
                                         className="absolute bottom-0 left-0 right-0 bg-[#000] text-white p-2 text-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-800"
@@ -146,6 +176,7 @@ const WishlistPage = () => {
                 </div>
             )}
             <JustForYou></JustForYou>
+            <Toaster></Toaster>
         </div>
     );
 };

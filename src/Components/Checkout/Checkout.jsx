@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const CheckoutPage = () => {
     const [formData, setFormData] = useState({
@@ -10,20 +12,34 @@ const CheckoutPage = () => {
         phone: '',
         email: ''
     });
+    const [errors, setErrors] = useState({
+        firstName: '',
+        streetAddress: '',
+        city: '',
+        phone: '',
+        email: ''
+    });
     const [saveInfo, setSaveInfo] = useState(false);
     const [paymentMethod, setPaymentMethod] = useState('bank');
     const [couponCode, setCouponCode] = useState('');
     const [cartItems, setCartItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     // Fetch cart items from localStorage and then fetch product details
     useEffect(() => {
         const savedCart = localStorage.getItem('cart');
         if (savedCart) {
             const cart = JSON.parse(savedCart);
-            fetchCartProducts(cart);
+            if (cart.length > 0) {
+                fetchCartProducts(cart);
+            } else {
+                setLoading(false);
+                navigate('/home')
+            }
         } else {
             setLoading(false);
+            navigate('/home')
         }
     }, []);
 
@@ -52,9 +68,80 @@ const CheckoutPage = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
+    const validateForm = () => {
+        let isValid = true;
+        const newErrors = {
+            firstName: '',
+            streetAddress: '',
+            city: '',
+            phone: '',
+            email: ''
+        };
+
+        if (!formData.firstName.trim()) {
+            newErrors.firstName = 'First name is required';
+            isValid = false;
+        }
+
+        if (!formData.streetAddress.trim()) {
+            newErrors.streetAddress = 'Street address is required';
+            isValid = false;
+        }
+
+        if (!formData.city.trim()) {
+            newErrors.city = 'City is required';
+            isValid = false;
+        }
+
+        if (!formData.phone.trim()) {
+            newErrors.phone = 'Phone number is required';
+            isValid = false;
+        } else if (!/^\d+$/.test(formData.phone)) {
+            newErrors.phone = 'Phone number must contain only numbers';
+            isValid = false;
+        }
+
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+            isValid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Please enter a valid email address';
+            isValid = false;
+        }
+
+        setErrors(newErrors);
+        return isValid;
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Order placed successfully!');
+
+        if (!validateForm()) {
+            toast.error('Please fill all required fields correctly', {
+                duration: 4000
+            });
+            return;
+        }
+
+        if (saveInfo) {
+            localStorage.setItem('customerInfo', JSON.stringify(formData));
+        }
+
+        const orderData = {
+            customer: formData,
+            products: cartItems,
+            paymentMethod,
+            total: subtotal,
+            date: new Date().toISOString()
+        };
+
+        console.log('Order placed:', orderData);
+        toast.success('Order placed successfully!', {
+            duration: 4000
+        });
+        localStorage.removeItem('cart');
+        setCartItems([]);
+        navigate('/order-confirmation');
     };
 
     return (
@@ -75,6 +162,7 @@ const CheckoutPage = () => {
                                 required
                                 className="w-full p-2 border  rounded focus:outline-none focus:border-black bg-[#f5f5f5]"
                             />
+                            {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
                         </div>
 
                         <div className="mb-4">
@@ -98,6 +186,7 @@ const CheckoutPage = () => {
                                 required
                                 className="w-full p-2 border  rounded focus:outline-none focus:border-black bg-[#f5f5f5]"
                             />
+                            {errors.streetAddress && <p className="text-red-500 text-xs mt-1">{errors.streetAddress}</p>}
                         </div>
 
                         <div className="mb-4">
@@ -121,6 +210,7 @@ const CheckoutPage = () => {
                                 required
                                 className="w-full p-2 border  rounded focus:outline-none focus:border-black bg-[#f5f5f5]"
                             />
+                            {errors.city && <p className="text-red-500 text-xs mt-1">{errors.city}</p>}
                         </div>
 
                         <div className="mb-4">
@@ -133,6 +223,7 @@ const CheckoutPage = () => {
                                 required
                                 className="w-full p-2 border  rounded focus:outline-none focus:border-black bg-[#f5f5f5]"
                             />
+                            {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
                         </div>
 
                         <div className="mb-4">
@@ -145,6 +236,7 @@ const CheckoutPage = () => {
                                 required
                                 className="w-full p-2 border  rounded focus:outline-none focus:border-black bg-[#f5f5f5]"
                             />
+                            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                         </div>
 
                         <div className="mb-6">
@@ -214,10 +306,10 @@ const CheckoutPage = () => {
                                         <div className='flex justify-between w-full items-center'>
                                             <span>Bank</span>
                                             <div className="flex justify-end items-center mt-1">
-                                                <img src="/public/bkash.png" alt="Visa" className="h-9" />
-                                                <img src="/public/visa.png" alt="Mastercard" className="h-5" />
-                                                <img src="/public/master.png" alt="Mastercard" className="h-5" />
-                                                <img src="/public/soso.png" alt="Mastercard" className="h-9" />
+                                                <img src="/bkash.png" alt="Visa" className="h-9" />
+                                                <img src="/visa.png" alt="Mastercard" className="h-5" />
+                                                <img src="/master.png" alt="Mastercard" className="h-5" />
+                                                <img src="/soso.png" alt="Mastercard" className="h-9" />
                                             </div>
                                         </div>
                                     </label>
@@ -244,7 +336,9 @@ const CheckoutPage = () => {
                                         className=" p-2 border w-3/5  rounded focus:outline-none mb-2"
                                     />
                                     <button
-                                        onClick={() => alert(`Coupon ${couponCode} applied`)}
+                                        onClick={() => toast.success(`Coupon ${couponCode} applied`, {
+                                            duration: 2000
+                                        })}
                                         className="bg-[#DB4444] text-white px-4 py-2 rounded "
                                     >
                                         Apply Coupon
@@ -258,6 +352,7 @@ const CheckoutPage = () => {
                                 >
                                     Place Order
                                 </button>
+                                <Toaster></Toaster>
                             </div>
                         </>
                     )}

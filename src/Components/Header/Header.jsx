@@ -4,6 +4,8 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+    const [wishlistCount, setWishlistCount] = useState(0);
+    const [cartCount, setCartCount] = useState(0);
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const navigate = useNavigate();
 
@@ -11,6 +13,8 @@ export function Header() {
     const navRef = useRef(null);
 
     useEffect(() => {
+        updateCounts();
+
         const handleClickOutside = (event) => {
             if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
                 setIsUserMenuOpen(false);
@@ -20,9 +24,18 @@ export function Header() {
             }
         };
 
+        const handleStorageChange = (event) => {
+            if (event.key === 'wishlist' || event.key === 'cart') {
+                updateCounts();
+            }
+        };
+
         document.addEventListener('mousedown', handleClickOutside);
+        window.addEventListener('storage', handleStorageChange);
+
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
+            window.removeEventListener('storage', handleStorageChange);
         };
     }, []);
 
@@ -31,6 +44,21 @@ export function Header() {
         setIsUserMenuOpen(false);
         navigate('/login');
     };
+
+
+    const updateCounts = () => {
+        const savedWishlist = localStorage.getItem('wishlist');
+        setWishlistCount(savedWishlist ? JSON.parse(savedWishlist).length : 0);
+
+        const savedCart = localStorage.getItem('cart');
+        if (savedCart) {
+            const cartItems = JSON.parse(savedCart);
+            setCartCount(cartItems.reduce((total, item) => total + item.quantity, 0));
+        } else {
+            setCartCount(0);
+        }
+    };
+
 
     return (
         <>
@@ -67,24 +95,28 @@ export function Header() {
                             <div className="flex items-center space-x-5">
                                 {isLoggedIn &&
                                     <>
-                                        <Link to="/wishlist" className="hover:text-red-500">
+                                        <Link to="/wishlist" className="hover:text-red-500 relative">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                             </svg>
-                                            <span className="flex absolute -mt-6 ml-4">
-                                                <span className="absolute inline-flex h-3 w-3 rounded-full bg-[#DB4444] opacity-75" />
-                                                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#DB4444]" />
-                                            </span>
+                                            {wishlistCount > 0 && (
+                                                <span className="absolute -top-2 -right-2 bg-[#DB4444] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                                                    {wishlistCount}
+                                                </span>
+                                            )}
                                         </Link>
-                                        <Link to="/cart" className="hover:text-red-500">
+
+                                        <Link to="/cart" className="hover:text-red-500 relative">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                             </svg>
-                                            <span className="flex absolute -mt-6 ml-4">
-                                                <span className="absolute inline-flex h-3 w-3 rounded-full bg-[#DB4444] opacity-75" />
-                                                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#DB4444]" />
-                                            </span>
-                                        </Link></>
+                                            {cartCount > 0 && (
+                                                <span className="absolute -top-2 -right-2 bg-[#DB4444] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                                                    {cartCount}
+                                                </span>
+                                            )}
+                                        </Link>
+                                    </>
                                 }
                                 {isLoggedIn ? (
                                     <div className="relative" ref={userMenuRef}>

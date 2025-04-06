@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Cart.css'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -57,10 +58,9 @@ const CartPage = () => {
 
     // Process checkout
     const processCheckout = () => {
-        alert('Order placed successfully!');
-        setCartItems([]);
-        setProducts([]);
-        localStorage.removeItem('cart');
+        toast.success('Redirecting to checkout...', {
+            duration: 2000
+        });
     };
 
     return (
@@ -160,7 +160,9 @@ const CartPage = () => {
                                     className="flex-1 border border-[#000] p-2 rounded focus:outline-none"
                                 />
                                 <button
-                                    onClick={() => alert(`Coupon ${couponCode} applied`)}
+                                    onClick={() => toast.success(`Coupon ${couponCode} applied`, {
+                                        duration: 2000
+                                    })}
                                     className="bg-[#DB4444] text-white px-6 py-2 rounded ms-4"
                                 >
                                     Apply Coupon
@@ -186,7 +188,7 @@ const CartPage = () => {
                                 </div>
                             </div>
                             <div className="flex justify-center">
-                                <Link to={'/Checkout '}
+                                <Link to={'/Checkout'}
                                     onClick={processCheckout}
                                     className="bg-[#DB4444] text-white px-8 py-2 rounded mt-6 hover:bg-[#c13333] transition-colors"
                                 >
@@ -197,6 +199,7 @@ const CartPage = () => {
                     </div>
                 </>
             )}
+            <Toaster></Toaster>
         </div>
     );
 };

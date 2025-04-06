@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 export function RightSection() {
     // Form state
@@ -136,7 +137,9 @@ export function RightSection() {
             };
 
             localStorage.setItem('user', JSON.stringify(updatedUser));
-            alert('Profile updated successfully');
+            toast.success('Data modified successfully!', {
+                duration: 2000
+            });
 
             // Reset password fields
             setFormData(prev => ({
@@ -289,6 +292,7 @@ export function RightSection() {
                     </div>
                 </form>
             </div>
+            <Toaster></Toaster>
         </div>
     );
 }

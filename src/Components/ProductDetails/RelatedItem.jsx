@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom';
 import { addToWishlist } from '../Wishlist/addToWishlist';
+import { addToCart } from '../Cart/AddtoCart';
 
 export default function RelatedItem() {
     const [products, setProducts] = useState([]);
@@ -88,7 +89,7 @@ export default function RelatedItem() {
                                     <Link to={`/products/${product.id}`} className="absolute top-14 right-3 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                         <EyeIcon className="h-5 w-5 text-gray-600 hover:text-[#DB4444]" />
                                     </Link>
-                                    <button className="absolute bottom-0 left-0 right-0 bg-[#000] text-white p-2 text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <button onClick={() => addToCart(product.id, 1)} className="absolute bottom-0 left-0 right-0 bg-[#000] text-white p-2 text-center opacity-0 group-hover:opacity-100 transition-opacity">
                                         Add To Cart
                                     </button>
                                 </div>

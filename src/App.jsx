@@ -1,5 +1,5 @@
 
-import { Route, Router, Routes } from 'react-router-dom'
+import { Navigate, Route, Router, Routes } from 'react-router-dom'
 import './App.css'
 import { Login } from './Components/Login/Login'
 import { Signup } from './Components/Signup/Signup'
@@ -17,6 +17,7 @@ import WishlistPage from './Components/Wishlist/Wishlist'
 import CartPage from './Components/Cart/Cart'
 import CheckoutPage from './Components/Checkout/Checkout';
 import ProductDetails from './Components/ProductDetails/ProductDetails'
+import OrderConfirmation from './Components/OrderConfirmation/OrderConfirmation'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -43,10 +44,15 @@ function App() {
           <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
           <Route path="/contact" element={<ProtectedRoute><ContactUs /></ProtectedRoute>} />
           <Route path="/products" element={<ProtectedRoute><ProductsPage /></ProtectedRoute>} />
+          <Route path="/products/category/:categorySlug" element={<ProtectedRoute><ProductsPage /></ProtectedRoute>} />
+          <Route path="/products/category" element={<Navigate to="/products" replace />} />
           <Route path="/wishlist" element={<ProtectedRoute><WishlistPage /></ProtectedRoute>} />
           <Route path="/Cart" element={<ProtectedRoute><CartPage /></ProtectedRoute>} />
           <Route path="/checkout" element={<ProtectedRoute><CheckoutPage /></ProtectedRoute>} />
           <Route path="/products/:id" element={<ProtectedRoute><ProductDetails /></ProtectedRoute>} />
+          <Route path='/order-confirmation' element={<ProtectedRoute><OrderConfirmation /></ProtectedRoute>} />
+
+
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
