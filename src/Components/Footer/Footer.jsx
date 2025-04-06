@@ -48,37 +48,43 @@ export function Footer() {
                             </div>
                             {/* Support */}
                             {isLoggedIn &&
-                                <div>
-                                    <h3 className="font-semibold mb-4">Support</h3>
-                                    <ul className="text-sm space-y-2">
-                                        <li><p>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p></li>
-                                        <li><p>exclusive@gmail.com</p></li>
-                                        <li><p>+88015-88888-9999</p></li>
-                                    </ul>
-                                </div>}
+                                <>
+                                    <div>
+                                        <h3 className="font-semibold mb-4">Support</h3>
+                                        <ul className="text-sm space-y-2">
+                                            <li><p>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p></li>
+                                            <li><p>exclusive@gmail.com</p></li>
+                                            <li><p>+88015-88888-9999</p></li>
+                                        </ul>
+                                    </div>
+                                </>}
                             {/* Account */}
                             {isLoggedIn &&
-                                <div>
-                                    <h3 className="font-semibold mb-4">Account</h3>
-                                    <ul className="text-sm space-y-2">
-                                        <li><Link to={'/account'} className="hover:text-blue-600">My Account</Link></li>
-                                        <li><Link to={'/login'} className="hover:text-blue-600">Login / Register</Link></li>
-                                        <li><Link to={'/cart'} className="hover:text-blue-600">Cart</Link></li>
-                                        <li><Link to={'/wishlist'} className="hover:text-blue-600">Wishlist</Link></li>
-                                        <li><Link to={'/products'} className="hover:text-blue-600">Shop</Link></li>
-                                    </ul>
-                                </div>}
+                                <>
+                                    <div>
+                                        <h3 className="font-semibold mb-4">Account</h3>
+                                        <ul className="text-sm space-y-2">
+                                            <li><Link to={'/account'} className="hover:text-blue-600">My Account</Link></li>
+                                            <li><Link to={'/login'} className="hover:text-blue-600">Login / Register</Link></li>
+                                            <li><Link to={'/cart'} className="hover:text-blue-600">Cart</Link></li>
+                                            <li><Link to={'/wishlist'} className="hover:text-blue-600">Wishlist</Link></li>
+                                            <li><Link to={'/products'} className="hover:text-blue-600">Shop</Link></li>
+                                        </ul>
+                                    </div>
+                                </>}
                             {/* Quick Link */}
                             {isLoggedIn &&
-                                <div>
-                                    <h3 className="font-semibold mb-4">Quick Link</h3>
-                                    <ul className="text-sm space-y-2">
-                                        <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
-                                        <li><a href="#" className="hover:text-blue-600">Terms Of Use</a></li>
-                                        <li><Link to={'/about'} className="hover:text-blue-600">FAQ</Link></li>
-                                        <li><Link to={'/contact'} className="hover:text-blue-600">Contact</Link></li>
-                                    </ul>
-                                </div>}
+                                <>
+                                    <div>
+                                        <h3 className="font-semibold mb-4">Quick Link</h3>
+                                        <ul className="text-sm space-y-2">
+                                            <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
+                                            <li><a href="#" className="hover:text-blue-600">Terms Of Use</a></li>
+                                            <li><Link to={'/about'} className="hover:text-blue-600">FAQ</Link></li>
+                                            <li><Link to={'/contact'} className="hover:text-blue-600">Contact</Link></li>
+                                        </ul>
+                                    </div>
+                                </>}
                             {/* Download App */}
                             <div>
                                 <h3 className="font-semibold mb-4">Download App</h3>
