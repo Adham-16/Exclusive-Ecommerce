@@ -1,6 +1,6 @@
 import React from 'react'
-import { Carousel } from './HomeComponents/carousel/carousel'
-import { TopRightSection } from './HomeComponents/topRightSection/topRightSection'
+import { Carousel } from './HomeComponents/carousel/Carousel'
+import { TopRightSection } from './HomeComponents/topRightSection/TopRightSection'
 import FlashSales from './HomeComponents/Flash Sales/FlashSales'
 import CategoriesSection from './HomeComponents/Categories/CategoriesSection'
 import BestSellingProducts from './HomeComponents/Best Selling Products/BestSellingProducts'
