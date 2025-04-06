@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 export function Footer() {
-    const [isReady, setIsReady] = useState(false)
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    // const [isReady, setIsReady] = useState(false)
+    // const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true')
-        setIsReady(true)
-    }, [])
+    //     setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true')
+    //     setIsReady(true)
+    // }, [])
 
-    if (!isReady) {
-        return (
-            <div className="bg-[#000000] px-20 dark:bg-gray-800 flex flex-col justify-center items-center">
-                <div className="container py-8 text-center">
-                    <div className="flex justify-center items-center h-64">
-                        <span class="loader"></span>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+    // if (!isReady) {
+    //     return (
+    //         <div className="bg-[#000000] px-20 dark:bg-gray-800 flex flex-col justify-center items-center">
+    //             <div className="container py-8 text-center">
+    //                 <div className="flex justify-center items-center h-64">
+    //                     <span class="loader"></span>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     )
+    // }
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
     return (
         <>
