@@ -1,13 +1,13 @@
 import React from 'react'
-import { Carousel } from './Home Componaents/carousel/carousel'
-import { TopRightSection } from './Home Componaents/topRightSection/topRightSection'
-import FlashSales from './Home Componaents/Flash Sales/FlashSales'
-import CategoriesSection from './Home Componaents/Categories/CategoriesSection'
-import BestSellingProducts from './Home Componaents/Best Selling Products/BestSellingProducts'
-import UrgentOffers from './Home Componaents/Urgent Offers/UrgentOffers';
-import OurProducts from './Home Componaents/OurProducts/OurProducts'
+import { Carousel } from './HomeComponents/carousel/carousel'
+import { TopRightSection } from './HomeComponents/topRightSection/topRightSection'
+import FlashSales from './HomeComponents/Flash Sales/FlashSales'
+import CategoriesSection from './HomeComponents/Categories/CategoriesSection'
+import BestSellingProducts from './HomeComponents/Best Selling Products/BestSellingProducts'
+import UrgentOffers from './HomeComponents/Urgent Offers/UrgentOffers';
+import OurProducts from './HomeComponents/OurProducts/OurProducts'
 import { SectionFour } from '../AboutUs/SectionFour'
-import NewArrival from './Home Componaents/NewArrival/NewArrival'
+import NewArrival from './HomeComponents/NewArrival/NewArrival'
 import { Toaster } from 'react-hot-toast'
 
 

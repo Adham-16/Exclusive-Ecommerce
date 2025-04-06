@@ -4,9 +4,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SelectedProductView from '../selectedProductView/selectedProductView';
-import { addToWishlist } from './../../../Wishlist/addToWishlist';
+import { addToWishlist } from '../../../Wishlist/addToWishlist';
 import { Link } from 'react-router-dom';
-import { addToCart } from './../../../Cart/AddtoCart';
+import { addToCart } from '../../../Cart/AddtoCart';
 
 export default function FlashSales() {
     const [products, setProducts] = useState([]);
