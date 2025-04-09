@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 export function LeftSection() {
     return (
         <>
-            <div className="w-[22%] bg-white p-6 rounded-lg ">
+            <div className="sm:w-[22%] bg-white p-6 rounded-lg ">
                 <div className="space-y-8">
                     <div className="border-b pb-4">
                         <h3 className="text-xl font-medium mb-3">

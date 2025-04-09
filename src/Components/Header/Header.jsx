@@ -67,7 +67,7 @@ export function Header() {
                 <Link to="/products" className="underline text-white ml-2">ShopNow</Link>
             </div>
             <div>
-                <section className="relative px-20 border-b-[0.1rem] border-b-[#d7d6d6]">
+                <section className="relative px-3 md:px-20 border-b-[0.1rem] border-b-[#d7d6d6]">
                     <nav className="flex justify-between flex-wrap text-black" ref={navRef}>
                         <div className=" py-4 flex w-full justify-between items-center">
                             <Link to="/home" className="text-3xl font-bold font-heading">
@@ -83,9 +83,9 @@ export function Header() {
                                     </ul>
                                     <form className="max-w-md w-2/5 md:w-1/5 mr-3">
                                         <div className="relative">
-                                            <input type="search" id="default-search" className="block start-0 w-full p-2 pe-15 text-sm text-gray-900 bg-gray-50 focus:border-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="What do you looking for?" required />
+                                            <input type="search" id="default-search" className="block text-[10px] sm:text-[14px] start-0 w-full p-2 pe-15  text-gray-900 bg-gray-50 focus:border-white ms-3 md:ms-0 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="What do you looking for?" required />
                                             <div className="absolute inset-y-0 end-2 flex items-center ps-3 pointer-events-none">
-                                                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                                 </svg>
                                             </div>
@@ -213,12 +213,12 @@ export function Header() {
                             </div>
                         </div>
                         {isLoggedIn &&
-                            <div className='w-full p-3 pt-0'>
+                            <div className='w-full  pt-0'>
                                 <div className={isOpen ? "mobile-menu md:hidden" : "mobile-menu hidden md:hidden"}>
                                     <ul className='space-y-1'>
                                         <li><Link to="/home" className="block px-4 py-3 text-white bg-gray-900 rounded">Home</Link></li>
                                         <li><Link to="/about" className="block px-4 py-3 text-white bg-gray-900 rounded">About</Link></li>
-                                        <li><Link to="/collections" className="block px-4 py-3 text-white bg-gray-900 rounded">Collections</Link></li>
+                                        <li><Link to="/products" className="block px-4 py-3 text-white bg-gray-900 rounded">Collections</Link></li>
                                         <li><Link to="/contact" className="block px-4 py-3 text-white bg-gray-900 rounded">Contact</Link></li>
                                     </ul>
                                 </div>

@@ -67,7 +67,7 @@ const ProductDetails = () => {
     if (!product) return <div className="text-center py-12">Product not found</div>;
 
     return (
-        <div className="container mx-auto px-20 py-8">
+        <div className="container mx-auto px-4 sm:px-20 py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Left Column - Product Images */}
                 <div className="flex flex-col md:flex-row gap-4">
@@ -97,7 +97,7 @@ const ProductDetails = () => {
                 </div>
 
                 {/* Right Column - Product Info */}
-                <div className='px-10'>
+                <div className='sm:px-10 p-1 space-y-4 sm:space-y-0'>
                     {/* Product title */}
                     <h1 className="text-2xl font-bold mb-1">{product.title}</h1>
 

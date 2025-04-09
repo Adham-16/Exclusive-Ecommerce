@@ -157,7 +157,7 @@ export function RightSection() {
     };
 
     return (
-        <div className="w-3/5">
+        <div className="sm:w-3/5">
             <div className="bg-white p-6 rounded-lg shadow-md">
                 <h2 className="text-xl font-medium mb-6 text-[#Db4444]">Edit Your Profile</h2>
 
@@ -169,8 +169,8 @@ export function RightSection() {
 
                 <form onSubmit={handleSubmit}>
                     <div className="space-y-4">
-                        <div className="flex space-x-4">
-                            <div className="w-1/2">
+                        <div className="flex flex-wrap sm:flex-nowrap sm:space-x-4 space-y-3 sm:space-y-0">
+                            <div className="w-full sm:w-1/2">
                                 <label className="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
                                 <input
                                     type="text"
@@ -184,7 +184,7 @@ export function RightSection() {
                                     <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>
                                 )}
                             </div>
-                            <div className="w-1/2">
+                            <div className="w-full sm:w-1/2">
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
                                 <input
                                     type="text"
@@ -200,8 +200,8 @@ export function RightSection() {
                             </div>
                         </div>
 
-                        <div className="flex space-x-4">
-                            <div className="w-1/2">
+                        <div className="flex flex-wrap sm:flex-nowrap sm:space-x-4 space-y-3 sm:space-y-0">
+                            <div className="w-full sm:w-1/2">
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
                                 <input
                                     type="email"
@@ -215,7 +215,7 @@ export function RightSection() {
                                     <p className="text-red-500 text-xs mt-1">{errors.email}</p>
                                 )}
                             </div>
-                            <div className="w-1/2">
+                            <div className="w-full sm:w-1/2">
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Address *</label>
                                 <input
                                     type="text"

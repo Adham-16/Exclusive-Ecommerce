@@ -8,8 +8,8 @@ export function Account() {
 
     return (
         <>
-            <div className="flex min-h-screen justify-around relative  p-4">
-                <div className='w-fit h-fit absolute right-[7%] top-[-2%] '>
+            <div className="flex flex-wrap min-h-screen justify-around relative  p-4">
+                <div className='w-fit h-fit absolute right-[7%] top-[-4%]  sm:top-[-2%] '>
                     Welcome <span className='text-[#db4444]'> {userData.name}</span>
                 </div>
                 <LeftSection></LeftSection>

@@ -108,7 +108,7 @@ export default function FlashSales() {
                     <p className="text-[#DB4444] font-semibold">Today's</p>
                 </div>
 
-                <div className="flex items-center justify-between space-x-16 mb-6 md:mb-0">
+                <div className="flex items-center justify-between flex-wrap sm:flex-nowrap sm:space-x-16 mb-6 md:mb-0">
                     <div className="flex items-center space-x-16">
                         <h2 className="text-2xl md:text-3xl font-semibold">Flash Sales</h2>
                         <div className='flex items-center space-x-2'>
@@ -133,7 +133,7 @@ export default function FlashSales() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-end items-center mb-6 space-x-4">
+                    <div className="flex justify-end items-center mt-4 md:mt-0  md:mb-6 space-x-4">
                         <button
                             onClick={() => sliderRef?.slickPrev()}
                             className="p-2 rounded-full bg-gray-200 hover:bg-[#DB4444] hover:text-white"

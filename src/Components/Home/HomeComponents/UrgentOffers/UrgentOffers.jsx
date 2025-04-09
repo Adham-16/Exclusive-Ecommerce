@@ -86,7 +86,7 @@ export default function UrgentOffers() {
                             alt="Music Experience"
                             width={500}
                             height={500}
-                            className="object-contain drop-shadow-lg transform scale-x-[-1.5] scale-150"
+                            className="object-contain max-w-[17rem] drop-shadow-lg transform scale-x-[-1.5] scale-150"
                             style={{ filter: 'drop-shadow(rgba(255, 255, 255, 0.4) 10px -10px 60px)' }}
                         />
                     </div>

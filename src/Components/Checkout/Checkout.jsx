@@ -327,7 +327,7 @@ const CheckoutPage = () => {
                                 </div>
 
                                 {/* Coupon Code */}
-                                <div className="mb-4 space-x-5">
+                                <div className="mb-4 sm:space-x-5">
                                     <input
                                         type="text"
                                         value={couponCode}

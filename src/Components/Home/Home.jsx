@@ -62,7 +62,7 @@ export function Home() {
                     </div>
                 </section>
             </div>
-            <Toaster></Toaster>
+            <Toaster ></Toaster>
         </>
     )
 }

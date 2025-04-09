@@ -80,9 +80,9 @@ export default function ContactUs() {
     };
 
     return (
-        <div className="flex min-h-screen space-x-5 py-14 px-20">
+        <div className="flex flex-wrap md:flex-nowrap min-h-screen space-y-3 md:space-y-0 md:space-x-5 py-14 px-4 md:px-20">
             {/* Left Section (1/3) */}
-            <div className="w-1/3 p-8 pb-14 h-fit shadow-md">
+            <div className="md:w-1/3 w-full p-8 pb-14 h-fit shadow-md">
                 <div className="mb-8 ">
                     <div className="flex items-center mb-6">
                         <PhoneIcon className="h-7 w-7 p-1 text-white bg-[#db4444] rounded-full mr-2" />
@@ -115,8 +115,8 @@ export default function ContactUs() {
             </div>
 
             {/* Right Section (2/3) */}
-            <div className="w-2/3">
-                <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="md:w-2/3 w-full">
+                <div className="bg-white md:p-8 rounded-lg shadow-sm">
                     {isSubmitted && (
                         <div className="mb-4 p-3 bg-green-100 text-green-700 rounded">
                             Your message has been sent successfully. We will get back to you soon!
@@ -125,8 +125,8 @@ export default function ContactUs() {
 
                     <form onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 gap-6 mb-6">
-                            <div className='flex gap-3'>
-                                <div>
+                            <div className='flex flex-wrap md:flex-nowrap gap-3'>
+                                <div className='w-full'>
                                     <input
                                         placeholder='Your Name *'
                                         type="text"
@@ -138,7 +138,7 @@ export default function ContactUs() {
                                     {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                                 </div>
 
-                                <div>
+                                <div className='w-full'>
                                     <input
                                         placeholder='Your Email *'
                                         type="email"
@@ -150,7 +150,7 @@ export default function ContactUs() {
                                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                                 </div>
 
-                                <div>
+                                <div className='w-full'>
                                     <input
                                         placeholder='Your Phone *'
                                         type="tel"
